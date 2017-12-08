@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { inject, observer } from 'mobx-react';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
@@ -7,8 +8,10 @@ interface State {
   password: string;
 }
 
-export default class Login extends React.Component<{}, State> {
-  constructor(props: {}) {
+@inject('store')
+@observer
+export default class Login extends React.Component<any, State> {
+  constructor(props: any) {
     super(props);
     this.state = {
       username: '',
@@ -16,18 +19,7 @@ export default class Login extends React.Component<{}, State> {
     };
   }
 
-  handleChange = (name: string) => (value: string) => {
-    if (name === 'username') {
-      return this.setState({
-        username: value
-      });
-    }
-    return this.setState({
-      password: value
-    });
-  };
-
-  render() {
+  public render() {
     return (
       <form noValidate={true} autoComplete="off">
         <TextField
@@ -44,8 +36,30 @@ export default class Login extends React.Component<{}, State> {
           onChange={e => this.handleChange('password')(e.target.value)}
           margin="normal"
         />
-        <Button onClick={() => console.log('u wot m8')}>Submit</Button>
+        <Button onClick={this.validateUser}>Submit</Button>
       </form>
     );
   }
+
+  private handleChange = (name: string) => (value: string) => {
+    if (name === 'username') {
+      return this.setState({
+        username: value
+      });
+    }
+    return this.setState({
+      password: value
+    });
+  };
+
+  private validateUser = () => {
+    if (
+      this.state.username === this.props.store.username &&
+      this.state.password === this.props.store.password
+    ) {
+      // This feels really really dirty
+      this.props.store.isLoggedIn = true;
+      this.props.history.push('/home');
+    }
+  };
 }

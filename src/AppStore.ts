@@ -4,6 +4,7 @@ import Appointment from './types/Appointment';
 class AppStore {
   @observable username: String = 'user';
   @observable password: String = 'pw';
+  @observable isLoggedIn: boolean = false;
   @observable
   appointmentDates: Array<Appointment> = [
     {
