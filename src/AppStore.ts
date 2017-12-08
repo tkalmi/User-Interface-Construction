@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 import Appointment from './types/Appointment';
 
 class AppStore {
@@ -14,6 +14,13 @@ class AppStore {
       time: '1830'
     }
   ];
+
+  @action
+  validateUser(formUser: string, formPassword: string): void {
+    if (this.username === formUser && this.password === formPassword) {
+      this.isLoggedIn = true;
+    }
+  }
 }
 
 export default AppStore;

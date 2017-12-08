@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
+import { Redirect } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
@@ -20,6 +21,9 @@ export default class Login extends React.Component<any, State> {
   }
 
   public render() {
+    if (this.props.store.isLoggedIn) {
+      return <Redirect to="/home" push={true} />;
+    }
     return (
       <form noValidate={true} autoComplete="off">
         <TextField
@@ -36,7 +40,16 @@ export default class Login extends React.Component<any, State> {
           onChange={e => this.handleChange('password')(e.target.value)}
           margin="normal"
         />
-        <Button onClick={this.validateUser}>Submit</Button>
+        <Button
+          onClick={() =>
+            this.props.store.validateUser(
+              this.state.username,
+              this.state.password
+            )
+          }
+        >
+          Submit
+        </Button>
       </form>
     );
   }
@@ -50,16 +63,5 @@ export default class Login extends React.Component<any, State> {
     return this.setState({
       password: value
     });
-  };
-
-  private validateUser = () => {
-    if (
-      this.state.username === this.props.store.username &&
-      this.state.password === this.props.store.password
-    ) {
-      // This feels really really dirty
-      this.props.store.isLoggedIn = true;
-      this.props.history.push('/home');
-    }
   };
 }
