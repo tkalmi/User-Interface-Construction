@@ -1,8 +1,9 @@
 type Appointment = {
-  id: String;
-  title: String;
-  date: String;
-  time: String;
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
 };
 
 export default Appointment;

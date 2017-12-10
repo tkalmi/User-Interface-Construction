@@ -6,12 +6,20 @@ class AppStore {
   @observable password: String = 'pw';
   @observable isLoggedIn: boolean = false;
   @observable
-  appointmentDates: Array<Appointment> = [
+  appointments: Array<Appointment> = [
     {
       id: '001',
-      title: 'checkup with Gary',
-      date: '20171205',
-      time: '1830'
+      title: 'Checkup with Gary',
+      date: 'Monday 27.07.2018',
+      time: '14:30 - 15:00',
+      location: 'University College Hospital, London'
+    },
+    {
+      id: '002',
+      title: 'Colonoscopy with Bertha',
+      date: 'Wednesday 27.12.2017',
+      time: '12:00 - 13:30',
+      location: 'University College Hospital, London'
     }
   ];
 
