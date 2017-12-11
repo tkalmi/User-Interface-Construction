@@ -17,6 +17,7 @@ class AppointmentList extends React.Component<any, {}> {
       <div>
         <h1>Appointments</h1>
         <Link to="/home">Back to menu</Link>
+        <Link to="/timeReservation">Make a new appointment</Link>
         {this.props.store.appointments.map((appointment: Appointment) => (
           <AppointmentComponent
             appointment={appointment}
