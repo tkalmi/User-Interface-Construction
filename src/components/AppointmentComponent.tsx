@@ -18,17 +18,17 @@ const AppointmentComponent = (props: Props): JSX.Element => {
         <p>{title}</p>
         <p>{location}</p>
         <div className="appointment-card-button">
-          <Button dense={true} color="primary">
-            <a
-              target="_blank"
-              href={
-                'https://www.google.com/maps/search/?api=1&query=' +
-                encodeURIComponent(location)
-              }
-            >
+          <a
+            target="_blank"
+            href={
+              'https://www.google.com/maps/search/?api=1&query=' +
+              encodeURIComponent(location)
+            }
+          >
+            <Button dense={true} color="primary">
               Map
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
       </CardContent>
     </Card>
