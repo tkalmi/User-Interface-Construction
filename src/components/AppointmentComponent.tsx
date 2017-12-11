@@ -9,7 +9,7 @@ const AppointmentComponent = (props: Props): JSX.Element => {
   const { title, date, time, location } = props.appointment;
   return (
     <div>
-      <p>{date}</p>
+      <p>{date.format('dddd DD.MM.YYYY')}</p>
       <p>{time}</p>
       <p>{title}</p>
       <p>{location}</p>

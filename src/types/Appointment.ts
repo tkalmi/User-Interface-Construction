@@ -1,7 +1,9 @@
+import { Moment } from 'moment';
+
 type Appointment = {
   id: string;
   title: string;
-  date: string;
+  date: Moment;
   time: string;
   location: string;
 };
