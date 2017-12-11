@@ -1,8 +1,11 @@
+import { Moment } from 'moment';
+
 type Appointment = {
-  id: String;
-  title: String;
-  date: String;
-  time: String;
+  id: string;
+  title: string;
+  date: Moment;
+  time: string;
+  location: string;
 };
 
 export default Appointment;
