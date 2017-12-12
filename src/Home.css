@@ -1,0 +1,16 @@
+.home-root {
+  flex-grow: 1;
+}
+
+.home-title {
+  text-align: center;
+}
+
+.home-link {
+  width: 100vw;
+  text-align: center;
+}
+
+.home-link a {
+  text-decoration: none;
+}
