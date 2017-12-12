@@ -2,6 +2,7 @@ import { observable, action } from 'mobx';
 import * as moment from 'moment';
 import Appointment from './types/Appointment';
 import * as shortid from 'shortid';
+import Message from './types/Message';
 
 class AppStore {
   @observable username: String = 'user';
@@ -50,6 +51,54 @@ class AppStore {
     };
     this.appointments.push(appointment);
   }
+
+  registrationLog: Array<Message> = [
+    {
+      text: 'What is your name?',
+      sender: 'Bot',
+      date: '2017/12/21',
+      time: '18:03'
+    },
+    {
+      text: 'My name is Janet',
+      sender: 'Janet',
+      date: '2017/12/21',
+      time: '18:04'
+    },
+    {
+      text:
+        'Nice to meet you, Janet. For me to work properly I need to find out a bit more about you. How hold are you?',
+      sender: 'Bot',
+      date: '2017/12/21',
+      time: '18:04'
+    },
+    {
+      text: 'I am 60 years old',
+      sender: 'Janet',
+      date: '2017/12/21',
+      time: '18:05'
+    },
+    {
+      text:
+        'Thanks for letting me know! Would you mind telling me how much you weigh?',
+      sender: 'Bot',
+      date: '2017/12/21',
+      time: '18:05'
+    },
+    {
+      text: 'I weigh 65kg',
+      sender: 'Janet',
+      date: '2017/12/21',
+      time: '18:07'
+    },
+    {
+      text:
+        "Thanks! That should be enough for now - you're all set up and ready to go!",
+      sender: 'Bot',
+      date: '2017/12/21',
+      time: '18:07'
+    }
+  ];
 }
 
 export default AppStore;

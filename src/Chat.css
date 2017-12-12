@@ -1,0 +1,15 @@
+.message-card {
+  margin: 10px;
+}
+
+.datetimeblock {
+  opacity: 0.3;
+}
+
+.timeText {
+  float: right;
+}
+
+.senderBlock h5 {
+  margin-bottom: 0;
+}

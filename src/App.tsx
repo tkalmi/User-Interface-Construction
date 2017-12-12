@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import AppointmentList from './components/AppointmentList';
 import TimeReservation from './components/TimeReservation';
+import ChatContainer from './components/ChatContainer';
 import Home from './components/Home';
 import AppBar from './components/AppBar';
 
@@ -11,6 +12,7 @@ const App = (): JSX.Element => {
     <AppBar>
       <BrowserRouter>
         <Switch>
+          <Route exact={true} path="/register" component={ChatContainer} />
           <Route exact={true} path="/login" component={Login} />
           <Route
             exact={true}
