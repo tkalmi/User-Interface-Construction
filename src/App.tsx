@@ -5,6 +5,8 @@ import AppointmentList from './components/AppointmentList';
 import TimeReservation from './components/TimeReservation';
 import Home from './components/Home';
 import AppBar from './components/AppBar';
+import UpdateData from './components/UpdateData';
+
 
 const App = (): JSX.Element => {
   return (
@@ -22,6 +24,7 @@ const App = (): JSX.Element => {
             path="/timeReservation"
             component={TimeReservation}
           />
+          <Route path="/update" component={UpdateData} />
           <Route path="/*" component={Home} />
         </Switch>
       </BrowserRouter>

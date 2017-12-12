@@ -6,7 +6,7 @@ import * as shortid from 'shortid';
 class AppStore {
   @observable username: String = 'user';
   @observable password: String = 'pw';
-  @observable isLoggedIn: boolean = false;
+  @observable isLoggedIn: boolean = true;
   @observable
   appointments: Array<Appointment> = [
     {
