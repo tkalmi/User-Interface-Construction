@@ -4,9 +4,8 @@ import Login from './components/Login';
 import AppointmentList from './components/AppointmentList';
 import TimeReservation from './components/TimeReservation';
 import Home from './components/Home';
-import AppBar from './components/AppBar';
 import UpdateData from './components/UpdateData';
-
+import AppBar from './components/AppBar';
 
 const App = (): JSX.Element => {
   return (
@@ -19,12 +18,13 @@ const App = (): JSX.Element => {
             path="/appointments"
             component={AppointmentList}
           />
+          <Route path="/update" component={UpdateData} />
           <Route
             exact={true}
             path="/timeReservation"
             component={TimeReservation}
           />
-          <Route path="/update" component={UpdateData} />
+
           <Route path="/*" component={Home} />
         </Switch>
       </BrowserRouter>
