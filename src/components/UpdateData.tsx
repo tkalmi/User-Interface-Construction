@@ -14,6 +14,7 @@ import NeutralIcon from 'material-ui-icons/SentimentNeutral';
 import IconButton from 'material-ui/IconButton';
 import '../UpdateDataComponent.css';
 import * as Recharts from 'recharts';
+import TextField from 'material-ui/TextField';
 
 function TabContainer(props: any) {
   return (
@@ -154,9 +155,82 @@ class EditTab extends React.Component<{}, { weight: number; height: number }> {
   }
 }
 
-class StepsTab extends React.Component {
+class StepsTab extends React.Component<{}, { goal: number }> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      goal: 10000
+    };
+  }
+  handleChange = (name: any) => (event: any) => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
+
   render() {
-    return <div>JEE JEE JERRY COTTON</div>;
+    return (
+      <div>
+        <h2>Steps-o-meter</h2>
+        <TextField
+          id="goal"
+          label="Set daily goal"
+          type="number"
+          value={this.state.goal}
+          onChange={this.handleChange('goal')}
+          InputLabelProps={{
+            shrink: true
+          }}
+          margin="normal"
+        />
+        <table>
+          <tr>
+            <td>Today:</td>
+            <td>
+              <Paper
+                style={{ background: '#1573ff', width: 370 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>11000</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>Yesterday:</td>
+            <td>
+              <Paper
+                style={{ background: '#ff4081', width: 160 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>4500</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>Monday:</td>
+            <td>
+              <Paper
+                style={{ background: '#ff4081', width: 180 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>5000</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>Tuesday:</td>
+            <td>
+              <Paper
+                style={{ background: '#1573ff', width: 380 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>11400</b>
+              </Paper>
+            </td>
+          </tr>
+        </table>
+      </div>
+    );
   }
 }
 

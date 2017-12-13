@@ -7,3 +7,8 @@
     padding-left: 24px;
     padding-right: 24px;
 }
+
+.success-paper {
+    text-align: center;
+    background-color: lawngreen;
+}
