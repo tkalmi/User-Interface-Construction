@@ -32,16 +32,16 @@ export default class Chat extends React.Component<any, any> {
         {this.props.store.chatLog.map((m: Message) => (
           <SingleMessage message={m} />
         ))}
+        <BottomNavigation
+          value={this.state.value}
+          onChange={this.handleChange}
+          showLabels={true}
+          className="bottomNav"
+        >
+          <BottomNavigationButton label="Go Back" icon={<BackIcon />} />
+          <BottomNavigationButton label="Done" icon={<DoneIcon />} />
+        </BottomNavigation>
       </div>
-      <BottomNavigation
-        value={this.state.value}
-        onChange={this.handleChange}
-        showLabels={true}
-        className="bottomNav"
-      >
-        <BottomNavigationButton label="Go Back" icon={<BackIcon />} />
-        <BottomNavigationButton label="Done" icon={<DoneIcon />} />
-      </BottomNavigation>
     );
   }
 }

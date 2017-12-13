@@ -20,7 +20,7 @@ class AppStore {
     },
     {
       text:
-        'Nice to meet you, Janet. For me to work properly I need to find out a bit more about you. How hold are you?',
+        'Nice to meet you, Janet. For me to work properly I need to find out a bit more about you. How old are you?',
       sender: 'Bot',
       date: '2017/12/21',
       time: '18:04'
