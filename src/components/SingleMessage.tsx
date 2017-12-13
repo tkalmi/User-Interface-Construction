@@ -5,12 +5,13 @@ import '../Chat.css';
 
 interface Props {
   message: Message;
+  assistantName: string;
 }
 
 const SingleMessage = (props: Props): JSX.Element => {
   const { text, sender, date, time } = props.message;
-  const color = sender === 'Bot' ? '#fdf5e6' : '#f0ffff';
-  const alignRight = sender !== 'Bot';
+  const color = sender === props.assistantName ? '#fdf5e6' : '#f0ffff';
+  const alignRight = sender !== props.assistantName;
   return (
     <Card className="message-card" style={{ backgroundColor: color }}>
       <CardContent>

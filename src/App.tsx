@@ -6,6 +6,7 @@ import TimeReservation from './components/TimeReservation';
 import Registration from './components/Registration';
 import Chat from './components/Chat';
 import Home from './components/Home';
+import Help from './components/Help';
 import AppBar from './components/AppBar';
 
 const App = (): JSX.Element => {
@@ -16,6 +17,7 @@ const App = (): JSX.Element => {
           <Route exact={true} path="/register" component={Registration} />
           <Route exact={true} path="/chat" component={Chat} />
           <Route exact={true} path="/login" component={Login} />
+          <Route exact={true} path="/help" component={Help} />
           <Route
             exact={true}
             path="/appointments"

@@ -116,7 +116,7 @@ class AppStore {
     {
       text:
         "Ok! I can see that you're quite old - do you have a history of heart problems?",
-      sender: 'Bot',
+      sender: 'Gary',
       date: '2017/12/21',
       time: '21:04'
     },
@@ -129,7 +129,7 @@ class AppStore {
     {
       text:
         'OK, I would recommend paying a visit to your local doctor and to find out more',
-      sender: 'Bot',
+      sender: 'Gary',
       date: '2017/12/21',
       time: '21:05'
     },
