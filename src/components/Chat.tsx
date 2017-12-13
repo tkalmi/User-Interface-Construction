@@ -9,14 +9,14 @@ import DoneIcon from 'material-ui-icons/Done';
 import BackIcon from 'material-ui-icons/ArrowBack';
 import '../general.css';
 
-
 @inject('store')
+@observer
 export default class Chat extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      value: 0,
-    }
+      value: 0
+    };
   }
 
   handleChange = (event: any, value: number) => {
@@ -25,16 +25,16 @@ export default class Chat extends React.Component<any, any> {
       return;
     }
     this.props.history.push('/home');
-  }
+  };
 
   // make this a grid and then render each message as a single grid item?
   public render() {
     return (
       <div>
         <div className="messageList">
-        {this.props.store.chatLog.map((m: Message) => (
-          <SingleMessage message={m} assistantName="Bot"/>
-        ))}
+          {this.props.store.chatLog.map((m: Message, ind: number) => (
+            <SingleMessage key={ind} message={m} assistantName="Bot" />
+          ))}
         </div>
         <BottomNavigation
           value={this.state.value}
