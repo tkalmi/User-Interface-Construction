@@ -35,6 +35,15 @@ export default class Home extends React.Component<any, any> {
           </Grid>
           <Grid item={true} xs={12}>
             <div className="home-link">
+              <Link to="/update">
+                <Button raised={true} color="primary">
+                  Edit data
+                </Button>
+              </Link>
+            </div>
+          </Grid>
+          <Grid item={true} xs={12}>
+            <div className="home-link">
               <Link to="/chat">
                 <Button raised={true} color="primary">
                   Chat

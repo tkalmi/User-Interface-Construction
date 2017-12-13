@@ -6,6 +6,7 @@ import TimeReservation from './components/TimeReservation';
 import Registration from './components/Registration';
 import Chat from './components/Chat';
 import Home from './components/Home';
+import UpdateData from './components/UpdateData';
 import Help from './components/Help';
 import AppBar from './components/AppBar';
 
@@ -23,11 +24,13 @@ const App = (): JSX.Element => {
             path="/appointments"
             component={AppointmentList}
           />
+          <Route path="/update" component={UpdateData} />
           <Route
             exact={true}
             path="/timeReservation"
             component={TimeReservation}
           />
+
           <Route path="/*" component={Home} />
         </Switch>
       </BrowserRouter>
