@@ -172,17 +172,19 @@ class StepsTab extends React.Component<{}, { goal: number }> {
     return (
       <div>
         <h2 className="tab-center">Steps-o-meter</h2>
-        <TextField
-          id="goal"
-          label="Set daily goal"
-          type="number"
-          value={this.state.goal}
-          onChange={this.handleChange('goal')}
-          InputLabelProps={{
-            shrink: true
-          }}
-          margin="normal"
-        />
+        <div className="align-input-right">
+          <TextField
+            id="goal"
+            label="Set daily goal"
+            type="number"
+            value={this.state.goal}
+            onChange={this.handleChange('goal')}
+            InputLabelProps={{
+              shrink: true
+            }}
+            margin="normal"
+          />
+        </div>
         <table>
           <tr>
             <td>Today</td>
