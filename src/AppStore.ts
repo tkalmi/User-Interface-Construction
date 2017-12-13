@@ -67,7 +67,7 @@ class AppStore {
       time: '20:04'
     },
     {
-      text: 'Oh dear! How long have you been feeling this way?',
+      text: 'Dizzy! How long have you been feeling this way?',
       sender: 'Bot',
       date: '2017/12/21',
       time: '20:04'
@@ -92,7 +92,7 @@ class AppStore {
       time: '20:07'
     },
     {
-      text: "No worries Janet, I hope you're feeling better soon!",
+      text: "Here to help Janet, I hope you're feeling better soon!",
       sender: 'Bot',
       date: '2017/12/21',
       time: '20:07'
