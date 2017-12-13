@@ -171,7 +171,7 @@ class StepsTab extends React.Component<{}, { goal: number }> {
   render() {
     return (
       <div>
-        <h2>Steps-o-meter</h2>
+        <h2 className="tab-center">Steps-o-meter</h2>
         <TextField
           id="goal"
           label="Set daily goal"
@@ -185,7 +185,7 @@ class StepsTab extends React.Component<{}, { goal: number }> {
         />
         <table>
           <tr>
-            <td>Today:</td>
+            <td>Today</td>
             <td>
               <Paper
                 style={{ background: '#1573ff', width: 370 }}
@@ -196,7 +196,7 @@ class StepsTab extends React.Component<{}, { goal: number }> {
             </td>
           </tr>
           <tr>
-            <td>Yesterday:</td>
+            <td>Yesterday</td>
             <td>
               <Paper
                 style={{ background: '#ff4081', width: 160 }}
@@ -207,7 +207,7 @@ class StepsTab extends React.Component<{}, { goal: number }> {
             </td>
           </tr>
           <tr>
-            <td>Monday:</td>
+            <td>Tuesday</td>
             <td>
               <Paper
                 style={{ background: '#ff4081', width: 180 }}
@@ -218,13 +218,57 @@ class StepsTab extends React.Component<{}, { goal: number }> {
             </td>
           </tr>
           <tr>
-            <td>Tuesday:</td>
+            <td>Monday</td>
             <td>
               <Paper
                 style={{ background: '#1573ff', width: 380 }}
                 className="tab-center"
               >
                 <b style={{ color: 'white' }}>11400</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>07.12.</td>
+            <td>
+              <Paper
+                style={{ background: '#1573ff', width: 350 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>10000</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>06.12.</td>
+            <td>
+              <Paper
+                style={{ background: '#ff4081', width: 200 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>7000</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>05.12.</td>
+            <td>
+              <Paper
+                style={{ background: '#ff4081', width: 190 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>5700</b>
+              </Paper>
+            </td>
+          </tr>
+          <tr>
+            <td>04.12.</td>
+            <td>
+              <Paper
+                style={{ background: '#1573ff', width: 360 }}
+                className="tab-center"
+              >
+                <b style={{ color: 'white' }}>10500</b>
               </Paper>
             </td>
           </tr>
