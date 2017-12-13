@@ -1,22 +1,41 @@
 import * as React from 'react';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './components/Login';
+import AppointmentList from './components/AppointmentList';
+import TimeReservation from './components/TimeReservation';
+import Registration from './components/Registration';
+import Chat from './components/Chat';
+import Home from './components/Home';
+import UpdateData from './components/UpdateData';
+import Help from './components/Help';
+import AppBar from './components/AppBar';
 
-const logo = require('./logo.svg');
+const App = (): JSX.Element => {
+  return (
+    <AppBar>
+      <BrowserRouter>
+        <Switch>
+          <Route exact={true} path="/register" component={Registration} />
+          <Route exact={true} path="/chat" component={Chat} />
+          <Route exact={true} path="/login" component={Login} />
+          <Route exact={true} path="/help" component={Help} />
+          <Route
+            exact={true}
+            path="/appointments"
+            component={AppointmentList}
+          />
+          <Route path="/update" component={UpdateData} />
+          <Route
+            exact={true}
+            path="/timeReservation"
+            component={TimeReservation}
+          />
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+          <Route path="/*" component={Home} />
+        </Switch>
+      </BrowserRouter>
+    </AppBar>
+  );
+};
 
 export default App;

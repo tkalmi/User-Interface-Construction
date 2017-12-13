@@ -15,6 +15,7 @@
         ],
         "curly": true,
         "eofline": false,
+        "experimentalDecorators": false,
         "forin": true,
         "indent": [ true, "spaces" ],
         "interface-name": [true, "never-prefix"],
@@ -29,7 +30,7 @@
             "static-before-instance",
             "variables-before-functions"
         ],
-        "no-any": true,
+        "no-any": false,
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [
