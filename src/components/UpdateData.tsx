@@ -49,17 +49,25 @@ export default class IconLabelTabs extends React.Component {
         </Tabs>
         {value === 0 && (
           <TabContainer>
-            <DataTab />
+            <EditTab />
           </TabContainer>
         )}
-        {value === 1 && <TabContainer>Item Two</TabContainer>}
-        {value === 2 && <TabContainer>Item Three</TabContainer>}
+        {value === 1 && (
+          <TabContainer>
+            <WeightTab />
+          </TabContainer>
+        )}
+        {value === 2 && (
+          <TabContainer>
+            <StepsTab />
+          </TabContainer>
+        )}
       </Paper>
     );
   }
 }
 
-class DataTab extends React.Component<{}, { weight: number; height: number }> {
+class EditTab extends React.Component<{}, { weight: number; height: number }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -142,5 +150,17 @@ class DataTab extends React.Component<{}, { weight: number; height: number }> {
         </div>
       </div>
     );
+  }
+}
+
+class StepsTab extends React.Component {
+  render() {
+    return <div>JEE JEE JERRY COTTON</div>;
+  }
+}
+
+class WeightTab extends React.Component {
+  render() {
+    return <div />;
   }
 }
