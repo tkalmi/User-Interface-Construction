@@ -11,6 +11,11 @@ export default class Home extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
   }
+  public componentWillMount() {
+    if (!this.props.store.isLoggedIn) {
+      this.props.history.push('/login');
+    }
+  }
 
   public render() {
     return (
