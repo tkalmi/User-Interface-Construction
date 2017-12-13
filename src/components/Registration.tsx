@@ -31,8 +31,8 @@ export default class Registration extends React.Component<any, any> {
     return (
       <div>
         <div className="messageList">
-          {this.props.store.registrationLog.map((m: Message) => (
-            <SingleMessage message={m} assistantName="Bot" />
+          {this.props.store.registrationLog.map((m: Message, ind: number) => (
+            <SingleMessage message={m} assistantName="Bot" key={ind} />
           ))}
         </div>
         <BottomNavigation
