@@ -4,6 +4,10 @@ import * as moment from 'moment';
 import Calendar from 'rc-calendar';
 import 'rc-calendar/assets/index.css';
 import Button from 'material-ui/Button';
+import BottomNavigation, {
+  BottomNavigationButton
+} from 'material-ui/BottomNavigation';
+import BackIcon from 'material-ui-icons/ArrowBack';
 import Appointment from '../types/Appointment';
 import ReservationDialog from './ReservationDialog';
 import '../TimeReservation.css';
@@ -11,6 +15,7 @@ import '../TimeReservation.css';
 interface State {
   selectedDate: moment.Moment;
   modalOpen: boolean;
+  value: number;
 }
 
 @inject('store')
@@ -20,9 +25,18 @@ class TimeReservation extends React.Component<any, State> {
     super(props);
     this.state = {
       selectedDate: moment(),
-      modalOpen: false
+      modalOpen: false,
+      value: 0
     };
   }
+
+  handleChange = (event: any, value: number) => {
+    if (value === 0) {
+      this.props.history.goBack();
+      return;
+    }
+    this.props.history.push('/home');
+  };
 
   public componentWillMount() {
     if (!this.props.store.isLoggedIn) {
@@ -90,14 +104,14 @@ class TimeReservation extends React.Component<any, State> {
   public render() {
     return (
       <div>
-        <h1>Time reservation</h1>
-        <Button onClick={() => this.props.history.goBack()}>Go back</Button>
+        <h1 className="centered">Time reservation</h1>
         <ReservationDialog
           open={this.state.modalOpen}
           selectedDate={this.state.selectedDate}
           onRequestClose={() => this.setState({ modalOpen: false })}
         />
         <Calendar
+          className="margin-auto"
           defaultValue={moment()}
           dateInputPlaceholder={moment().format('DD/MM/YYYY')}
           dateRender={(current: moment.Moment, selectedDate: moment.Moment) =>
@@ -109,6 +123,14 @@ class TimeReservation extends React.Component<any, State> {
           renderFooter={() => this.Footer()}
           showToday={false}
         />
+        <BottomNavigation
+          value={this.state.value}
+          onChange={this.handleChange}
+          showLabels={true}
+          className="bottomNav"
+        >
+          <BottomNavigationButton label="Go Back" icon={<BackIcon />} />
+        </BottomNavigation>
       </div>
     );
   }

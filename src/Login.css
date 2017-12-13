@@ -1,0 +1,16 @@
+.login-root {
+  flex-grow: 1;
+}
+
+.centered {
+  text-align: center;
+}
+
+.login-title {
+  margin-bottom: 0;
+}
+
+.registration-link {
+  margin-top: 10px;
+  color: #aaa;
+}

@@ -1,0 +1,10 @@
+.align-right {
+  text-align: right;
+}
+
+.time-text {
+  margin: auto !important;
+}
+.reservation-times {
+  margin-top: 20px;
+}
