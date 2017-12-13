@@ -13,6 +13,7 @@ import DissatisfiedIcon from 'material-ui-icons/SentimentDissatisfied';
 import NeutralIcon from 'material-ui-icons/SentimentNeutral';
 import IconButton from 'material-ui/IconButton';
 import '../UpdateDataComponent.css';
+import * as Recharts from 'recharts';
 
 function TabContainer(props: any) {
   return (
@@ -121,20 +122,20 @@ class EditTab extends React.Component<{}, { weight: number; height: number }> {
         </div>
         <h4 className="tab-center">How are you feeling?</h4>
         <div className="tab-center">
-          <IconButton>
-            <MoodBadIcon />
+          <IconButton color="primary">
+            <MoodIcon />
           </IconButton>
-          <IconButton>
-            <DissatisfiedIcon />
+          <IconButton color="primary">
+            <SatisfiedIcon />
           </IconButton>
           <IconButton>
             <NeutralIcon />
           </IconButton>
-          <IconButton>
-            <SatisfiedIcon />
+          <IconButton color="accent">
+            <DissatisfiedIcon />
           </IconButton>
-          <IconButton>
-            <MoodIcon />
+          <IconButton color="accent">
+            <MoodBadIcon />
           </IconButton>
         </div>
         <h4 className="tab-center">Did you eat healthy?</h4>
@@ -161,6 +162,59 @@ class StepsTab extends React.Component {
 
 class WeightTab extends React.Component {
   render() {
-    return <div />;
+    return (
+      <div>
+        <h2 className="tab-center">Weight loss chart</h2>
+        <SimpleLineChart />
+        <h3 className="tab-center">Your ideal weight is: 58 kg</h3>
+        <h3 className="tab-center">
+          You will reach it in 2 months <MoodIcon color="primary" />
+        </h3>
+      </div>
+    );
+  }
+}
+const {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} = Recharts;
+const data = [
+  { name: 'Jan', kg: 65, goal: 64, amt: 100 },
+  { name: 'Feb', kg: 64, goal: 63, amt: 100 },
+  { name: 'Mar', kg: 65, goal: 62.5, amt: 100 },
+  { name: 'Apr', kg: 63, goal: 62, amt: 100 },
+  { name: 'Jun', kg: 61, goal: 61, amt: 100 },
+  { name: 'Jul', kg: 60, goal: 60, amt: 100 },
+  { name: 'Aug', kg: 57, goal: 59, amt: 100 }
+];
+class SimpleLineChart extends React.Component {
+  render() {
+    return (
+      <LineChart
+        width={450}
+        height={300}
+        data={data}
+        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        className="tab-center"
+      >
+        <XAxis dataKey="name" />
+        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" />
+        <Tooltip />
+        <Legend />
+        <Line
+          type="monotone"
+          dataKey="kg"
+          stroke="#8884d8"
+          activeDot={{ r: 8 }}
+        />
+        <Line type="monotone" dataKey="goal" stroke="#82ca9d" />
+      </LineChart>
+    );
   }
 }
