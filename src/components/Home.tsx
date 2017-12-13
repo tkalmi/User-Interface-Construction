@@ -11,7 +11,6 @@ export default class Home extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
   }
-
   public componentWillMount() {
     if (!this.props.store.isLoggedIn) {
       this.props.history.push('/login');
@@ -30,6 +29,15 @@ export default class Home extends React.Component<any, any> {
               <Link to="/appointments">
                 <Button raised={true} color="primary">
                   Appointments
+                </Button>
+              </Link>
+            </div>
+          </Grid>
+          <Grid item={true} xs={12}>
+            <div className="home-link">
+              <Link to="/chat">
+                <Button raised={true} color="primary">
+                  Chat
                 </Button>
               </Link>
             </div>
